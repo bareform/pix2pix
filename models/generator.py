@@ -25,7 +25,7 @@ class Generator(nn.Module):
                     padding=1,
                     bias=False,
                     use_instance_norm=idx != 0,
-                    dropout_p=0.25,
+                    dropout=0.25,
                 )
             )
         self.down_blocks = nn.ModuleList(down_blocks)
@@ -38,7 +38,7 @@ class Generator(nn.Module):
             padding=1,
             bias=False,
             use_instance_norm=False,
-            dropout_p=0.5,
+            dropout=0.5,
         )
 
         up_blocks = []
@@ -53,7 +53,7 @@ class Generator(nn.Module):
                     padding=1,
                     bias=False,
                     use_instance_norm=True,
-                    dropout_p=0.25,
+                    dropout=0.25,
                 )
             )
         self.up_blocks = nn.ModuleList(up_blocks)

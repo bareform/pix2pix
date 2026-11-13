@@ -11,7 +11,7 @@ class UpsampleBlock(nn.Module):
         padding=0,
         bias=False,
         use_instance_norm=True,
-        dropout_p=0.0,
+        dropout=0.0,
     ) -> None:
         super().__init__()
         layers = [
@@ -27,8 +27,8 @@ class UpsampleBlock(nn.Module):
         if use_instance_norm:
             layers.append(nn.InstanceNorm2d(out_channels))
         layers.append(nn.ReLU(inplace=True))
-        if dropout_p > 0.0:
-            layers.append(nn.Dropout(dropout_p))
+        if dropout > 0.0:
+            layers.append(nn.Dropout(dropout))
         self.layers = nn.Sequential(*layers)
 
     def forward(self, input: torch.Tensor) -> torch.Tensor:
@@ -45,7 +45,7 @@ class DownsampleBlock(nn.Module):
         padding=0,
         bias=False,
         use_instance_norm=True,
-        dropout_p=0.0,
+        dropout=0.0,
     ) -> None:
         super().__init__()
         layers = [
@@ -61,8 +61,8 @@ class DownsampleBlock(nn.Module):
         if use_instance_norm:
             layers.append(nn.InstanceNorm2d(out_channels))
         layers.append(nn.LeakyReLU(0.2, inplace=True))
-        if dropout_p > 0.0:
-            layers.append(nn.Dropout(dropout_p))
+        if dropout > 0.0:
+            layers.append(nn.Dropout(dropout))
         self.layers = nn.Sequential(*layers)
 
     def forward(self, input: torch.Tensor) -> torch.Tensor:
