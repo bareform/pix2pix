@@ -29,7 +29,7 @@ random_seed = 0
 
 [evaluation]
 checkpoint_dir = "./checkpoints"
-save_checkpoint_interval = 200
+save_checkpoint_interval = 25
 
 output_dir = "./output"
 save_output_interval = 1
