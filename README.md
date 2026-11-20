@@ -1,6 +1,6 @@
 # pix2pix
 
-Cycle-Consistent Adversarial Network (CycleGANs) is a method for image-to-image translation.
+pix2pix is a method for image-to-image translation.
 
 ## Installation
 
