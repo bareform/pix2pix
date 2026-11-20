@@ -38,6 +38,16 @@ After training for 25 epochs, you can find results similiar to the image at `./a
 
 <img src="assets/edges2shoes/edges2shoes.png" width="256" alt="edges2shoes">
 
+To train a low-precision `edges2handbags` pix2pix:
+
+```
+python3 -m utils.trainer --config="./configs/edges2handbags.toml"
+```
+
+After training for 25 epochs, you can find results similiar to the image at `./assets/edges2handbags/edges2handbags.png`:
+
+<img src="assets/edges2handbags/edges2handbags.png" width="256" alt="edges2handbags">
+
 You can download the pre-trained models [here](https://huggingface.co/luethan2025/pix2pix) and use the provided Jupyter Notebook `inference.ipynb` to generate some samples.
 
 ## Method
